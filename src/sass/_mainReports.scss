@@ -1,0 +1,64 @@
+/***********
+** MAIN ****/
+.main {
+  padding-block: 4em;
+
+  input {
+    display: block;
+    margin-bottom: 2em;
+    padding: 0.75em;
+    @include btnLike();
+    font-size: 0.875em;
+    &:focus {
+      border: none;
+      outline: 1px solid $baseC;
+    }
+  }
+}
+
+/***********
+** REPORTS ****/
+.report {
+  &__list {
+    margin-top: 4em;
+  }
+  &__item {
+    display: grid;
+    grid-template-columns: 4fr 4fr 2fr 2fr 1fr;
+    align-items: center;
+    padding-block: 0.5em;
+    margin-bottom: 1em;
+    box-shadow: $bShadow;
+  }
+  &__item:last-child {
+    margin-bottom: 0;
+  }
+  &__detail {
+    border-right: 1px solid rgba(0, 0, 0, 0.25);
+    padding-left: 1em;
+  }
+  &__detail:last-child {
+    border-right: 0;
+  }
+  &__text {
+    color: $baseC;
+    font-weight: bold;
+  }
+  &__title {
+    color: $secondC;
+    font-size: 0.9em;
+  }
+}
+/*********************
+** MEDIA QUERIES ****/
+
+@media (min-width: $s) {
+  .btn {
+    padding-inline: 1.55em;
+  }
+}
+@media (min-width: $m) {
+}
+
+@media (min-width: $l) {
+}

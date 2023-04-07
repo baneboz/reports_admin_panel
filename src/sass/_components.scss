@@ -2,7 +2,7 @@
 ** HELPERS ****/
 .btn {
   @include btnLike();
-  padding: 0.5em 1em;
+  padding: 0.75em 1em;
   background-color: $baseC;
   color: #fff;
   text-transform: uppercase;
@@ -11,6 +11,17 @@
   &:hover {
     background-color: $secondC;
   }
+  &--disabled {
+    pointer-events: none;
+    background-color: $seletedC;
+  }
+  &--next,
+  &--submit {
+    margin-left: auto;
+  }
+}
+.navigation {
+  @include flexAndCenter();
 }
 
 /**************
@@ -54,19 +65,6 @@
 }
 
 /*********************
-** SELECTED ****/
-.chosen {
-  margin-bottom: 2em;
-  @include flexAndCenter();
-
-  & > p {
-    margin-right: 2em;
-  }
-}
-.selected {
-  background-color: $seletedC;
-}
-/*********************
 ** MEDIA QUERIES ****/
 
 @media (min-width: $s) {
@@ -93,11 +91,12 @@
       grid-template-columns: 1fr 1fr;
       gap: 1em;
     }
-
-    .btn--close {
-      position: absolute;
-      top: 2em;
-      right: 2em;
+    .btn {
+      &--close {
+        position: absolute;
+        top: 2em;
+        right: 2em;
+      }
     }
   }
 }

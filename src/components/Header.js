@@ -9,11 +9,11 @@ export default function Header() {
             Reports <br />
             Administration
           </h1>
-          <Link to="/" className="btn btn--link">
+          <Link to="/" className="btn">
             Reports
           </Link>
-          <Link to="/candidate" className="btn btn--link">
-            Create reports
+          <Link to="/createreport" className="btn">
+            Create
           </Link>
         </div>
       </div>

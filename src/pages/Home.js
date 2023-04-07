@@ -38,16 +38,23 @@ export default function Home() {
       const searchCompany = report.companyName.toLowerCase();
 
       return (
-        searchName.indexOf(e.target.value) !== -1 ||
-        searchCompany.indexOf(e.target.value) !== -1
+        searchName.indexOf(query.toLowerCase()) !== -1 ||
+        searchCompany.indexOf(query.toLowerCase()) !== -1
       );
     });
 
     setReports(filteredReports);
   }
 
+  function deleteReport(e) {
+    const id = +e.target.closest(".report__item").id;
+    const newState = reports.filter(report => report.id !== id);
+    setReports(newState);
+    setFilteredResults(newState);
+  }
+
   const reportsList = reports.map(report => (
-    <Report reports={report} key={report.id} />
+    <Report reports={report} key={report.id} handleDelete={deleteReport} />
   ));
 
   return (
@@ -57,6 +64,7 @@ export default function Home() {
         placeholder="Search"
         value={searchInput}
         onChange={searchItems}
+        className="main__search"
       />
 
       {!isLoaded && <Spinner />}

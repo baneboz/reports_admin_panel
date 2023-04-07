@@ -1,11 +1,12 @@
-export default function Selected() {
+export default function Selected({ formData }) {
   return (
-    <section className="chosen">
-      <p>Selected:</p>
-      <div className="card__content">
-        <h3 className="card__name">Bane Boz</h3>
-        <p className="card__email">Candidate</p>
-      </div>
-    </section>
+    <div className="form__selected">
+      <p>
+        Candidate: <span className="card__name">{formData.candidate}</span>
+      </p>
+      <p>
+        Company: <span className="card__name">{formData.company}</span>
+      </p>
+    </div>
   );
 }

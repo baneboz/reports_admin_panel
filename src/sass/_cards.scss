@@ -28,6 +28,7 @@
     background-color: $seletedC;
   }
 }
+
 @media (min-width: $s) {
   .cards {
     grid-template-columns: 1fr 1fr;

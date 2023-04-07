@@ -1,13 +1,25 @@
 export default function Card(props) {
-  const { card } = props;
-
+  const { card, handleClick, fromWhere } = props;
   return (
-    <div className="card" onClick={props.handleClick}>
-      <img src={card.avatar} alt={card.name} className="card__img" />
-      <div className="card__content">
-        <h3 className="card__name">{card.name}</h3>
-        <p className="card__email">{card.email}</p>
-      </div>
-    </div>
+    <li key={card.id}>
+      <input
+        type="radio"
+        id={card.id}
+        name={fromWhere}
+        value={card.name}
+        onChange={handleClick}
+        className="card__radio"
+      />
+      <label htmlFor={card.id} data-id={card.id} className={`card`}>
+        {card.avatar && (
+          <img src={card.avatar} alt={card.name} className="card__img" />
+        )}
+
+        <div className="card__content">
+          <p className="card__name">{card.name}</p>
+          <p className="card__email">{card.email}</p>
+        </div>
+      </label>
+    </li>
   );
 }

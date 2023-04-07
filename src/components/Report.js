@@ -46,7 +46,9 @@ export default function Report(props) {
         <button className="btn btn--view" onClick={renderModal}>
           View
         </button>
-        <button className="btn btn--view">X</button>
+        <button className="btn btn--view" onClick={props.handleDelete}>
+          X
+        </button>
       </div>
 
       {showModal && <Modal report={report} handleClose={closeModal} />}

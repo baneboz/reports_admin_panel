@@ -2,18 +2,6 @@
 ** MAIN ****/
 .main {
   padding-block: 4em;
-
-  input {
-    display: block;
-    margin-bottom: 2em;
-    padding: 0.75em;
-    @include btnLike();
-    font-size: 0.875em;
-    &:focus {
-      border: none;
-      outline: 1px solid $baseC;
-    }
-  }
 }
 
 /***********
@@ -39,6 +27,7 @@
   }
   &__detail:last-child {
     border-right: 0;
+    @include flexAndCenter();
   }
   &__text {
     color: $baseC;
@@ -48,17 +37,4 @@
     color: $secondC;
     font-size: 0.9em;
   }
-}
-/*********************
-** MEDIA QUERIES ****/
-
-@media (min-width: $s) {
-  .btn {
-    padding-inline: 1.55em;
-  }
-}
-@media (min-width: $m) {
-}
-
-@media (min-width: $l) {
 }
